@@ -1,0 +1,24 @@
+#TODO На данный момент общепринятым стандартом считается писать эти конфигурцияя на yaml,
+#т.к компактнее, проще валидировать и проще читать
+spring:
+  main:
+    banner-mode: console
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgress
+    username: roza
+    password: 123
+    schema: classpath*:database/initDB.sql
+
+    initialization-mode: always
+    platform: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        jdbc:
+          lob.non_contextual_creation: true
+
+logging:
+  level:
+    org.springframework: ERROR
